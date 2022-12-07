@@ -1,0 +1,23 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  commit_comment:
+    branches: [ "main" ]
+
+jobs:
+  my_testing:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: configure
+      run: ./configure
+    - name: cmake
+      run: cmake --build . -j --config Release
+    - name: Test
+      run: ctest -j -C Release
