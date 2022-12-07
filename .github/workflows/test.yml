@@ -1,0 +1,23 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+ 
+
+jobs:
+  testing:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: cmake
+      run: cmake -S . -B ./build/
+      
+    - name: make check
+      run: cd build && make
+      
+    - name: unittest
+      run: ./build/Unittest
