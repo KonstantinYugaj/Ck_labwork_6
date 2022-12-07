@@ -2,15 +2,19 @@
 int Addition(int x, int y) {
     return(x + y);
 }
+
 int Subtraction(int x, int y) {
     return(x - y);
 }
+
 int Multiplication(int x, int y) {
     return(x * y);
 }
+
 int Division(int x, int y) {
     return(x / y);
 }
+
 int main() {
     setlocale(LC_ALL, "Russian");
     int a = 0;
