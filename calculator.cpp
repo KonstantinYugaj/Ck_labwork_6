@@ -47,5 +47,6 @@ int main() {
     default:
         std::cout << "Ошибка"<<'\n';
     }
+    
     return 0;
 }
